@@ -36,4 +36,12 @@ class CodelabFormElement extends PolymerElement {
     descriptionErrorMessage = '';
     return true;
   }
+
+  validateCodelab(Event event, Object detail, Node sender) {
+    event.preventDefault();
+    if (validateTitle() && validateDescription()) {
+      dispatchEvent(new CustomEvent('codelabvalidated',
+          detail: {'codelab': codelab}));
+    }
+  }
 }
