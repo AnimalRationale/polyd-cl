@@ -5,4 +5,5 @@ import 'dart:html' show Event, Node, CustomEvent;
 @CustomTag('codelab-element')
 class CodelabElement extends PolymerElement {
   CodelabElement.created() : super.created() {}
+  @published Codelab codelab;
 }
